@@ -1,0 +1,154 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #ed5b13; /* Header background color */
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #060606;
+    margin-bottom: 20px;
+  }
+  
+/* Card styling */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px; /* Add space between cards */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Button container for horizontal alignment */
+.d-flex {
+    display: flex;
+    gap: 10px; /* Adds spacing between buttons */
+    justify-content: flex-start; /* Align buttons to the left */
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line on smaller screens */
+}
+
+/* Button styling */
+.btn {
+    flex: 1 1 auto; /* Buttons will grow and shrink, but be limited to max-width */
+    width: 120px; /* Limit the width of each button */
+    margin: 5px 0; /* Adds spacing between buttons vertically */
+    font-weight: bold;
+    color: white; /* Button text color */
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* Specific button colors */
+.btn-primary {
+    background-color: #af4c9e; /* Blue */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #af4c9e; /* Darker blue on hover */
+}
+
+.btn-secondary {
+    background-color: #af4c9e; /* Gray */
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #af4c9e; /* Darker gray on hover */
+}
+
+.btn-success {
+    background-color: #af4c9e; /* Green */
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #af4c9e; /* Darker green on hover */
+}
+
+.btn-info {
+    background-color: #af4c9e; /* Teal */
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #af4c9e; /* Darker teal on hover */
+}
+
+/* Modal styling */
+.modal-body {
+    font-size: 1.1em;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    /* For smaller screens, buttons will still align horizontally */
+    .btn {
+        width: 100%; /* Make buttons full width on smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .btn {
+        width: 120px; /* Limit button width on larger screens */
+    }
+}

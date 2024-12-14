@@ -1,0 +1,151 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #af4c9e;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #af4c9e;
+  margin-bottom: 20px;
+}
+
+
+.section {
+  padding: 40px 20px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensures exactly 3 cards per row */
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+} */
+
+#mainDanceImage{
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn-primary {
+  background-color: #af4c9e;
+  color: white;
+}
+
+.card .btn-secondary {
+  background-color: #af4c9e;
+  color: white;
+}
+
+.card .btn-secondary:hover {
+  background-color: #af4c9e;
+  color: white;
+}
+
+.modal-body {
+  font-size: 1.1em;
+}
+
+/* .modal-body h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal-body p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+} */
+
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr; /* Adjust to 1 card per row on small screens */
+  }
+}
+

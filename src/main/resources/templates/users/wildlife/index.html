@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife of Uttar Pradesh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/main/userNavStyle.css" />
+
+    <!-- <link type="text/css" rel="stylesheet" href="/css/main/owl.carousel.min.css" />
+    <link type="text/css" rel="stylesheet" href="/css/main/owl.theme.default.min.css" /> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #e6f3ff 0%, #d1f2d1 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(to right, #4ecdc4, #45b7d1);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .monument-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .monument-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            transform: perspective(1000px) rotateX(0deg);
+        }
+
+        .monument-card:hover {
+            transform: perspective(1000px) rotateX(-5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #45b7d1;
+        }
+
+        .monument-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .monument-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .monument-card-content {
+            padding: 30px;
+            background: linear-gradient(to right, #f0f9ff, #f5fff5);
+        }
+
+        .monument-card-content h2 {
+            color: #2c7f4d;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #45b7d1;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .monument-card-content .location {
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            background: rgba(230, 126, 34, 0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .monument-card-content .details {
+            margin-top: 20px;
+            color: #34495e;
+            background: rgba(52, 73, 94, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .details strong {
+            color: #2c7f4d;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 30%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .back-btn {
+            display: block;
+            width: 250px;
+            margin: 50px auto 0;
+            text-align: center;
+            padding: 15px 20px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .monument-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                flex-direction: column;
+            }
+
+            .gallery img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div th:insert="~{includes/userNav::userNav}"></div><br>
+    <div class="container">
+        <div class="header">
+            <h1 th:text="'WildLife Sancturies in '+${state}"></h1>
+            <p>Discover the breathtaking biodiversity of Uttar Pradesh, a sanctuary of remarkable wildlife that
+                showcases nature's incredible diversity and resilience.</p>
+        </div>
+
+        <div class="container">
+
+            <div class="monument-grid">
+                <div class="monument-card" th:each="wildlife : ${wildlifes}">
+                    <img th:src="${wildlife.imageList[0]}" alt="Royal Bengal Tiger">
+                    <div class="monument-card-content">
+                        <h2 th:text="${wildlife.speciesName}"></h2>
+                        <div class="location" th:text="'Habitat: '+${wildlife.habitat}"></div>
+                        <p th:text="${wildlife.regionFound}"></p>
+                        <div class="details">
+                            <strong>Found In State:</strong>
+                            <p th:text="${wildlife.stateId.name}"></p>
+                            <p><strong>Additional Information:</strong></p>
+
+                            <p th:text="${wildlife.uniqueFeatures}"><strong>Unique Features:</strong>
+                            </p>
+                            <p th:text="${wildlife.conservationStatus}"><strong>Conservation Efforts:</strong>
+                            </p>
+                        </div>
+                        <div class="gallery">
+                            <img th:each="image,iter : ${wildlife.imageList}" th:src="${image}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

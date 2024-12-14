@@ -1,0 +1,65 @@
+nav {
+    
+    width: 100%;
+    padding: 30px 0;
+    
+}
+
+.nav-fixed {
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 2px 2px 10px #bbb;
+}
+
+.nav-fixed h2 {
+    color: #ff7702 !important;
+}
+
+.nav-fixed .nav ul a {
+    color: #138808;
+}
+
+.menu-par {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul a {
+    color:black;
+    padding: 10px;
+    
+}
+
+.nav ul a:before {
+    content: "s";
+    background-color: #ff7702;    
+    top: 0;
+    width: 0%;
+    height: 2px;
+    font-size: 0px;
+    left: 10px;
+    
+}
+
+.nav ul a:hover:before {
+    width: 74%;
+    
+}
+
+.home_header_info h1 {
+    font-size: 45px;
+    padding: 20px 0px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logo-par h2 {
+    color: #fff;
+    font-size: 40px;
+}

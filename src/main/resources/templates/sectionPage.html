@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Admin Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/main/style.css" />
+    <style>
+        .card {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.mapsofindia.com/ci-moi-images/my-india/2014/07/top-monuments-of-india.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            /* width: 60px; */
+            /* min-width: 60px; */
+            height: 300px;
+            /* border-radius: 40px; */
+            margin: 0 15px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .card_2 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://st3.depositphotos.com/1441191/14985/v/1600/depositphotos_149858280-stock-illustration-abstract-music-collage-background.jpg);
+            
+        }
+
+        .card_3 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://preview.redd.it/ufo3xq64boa61.jpg?width=1080&crop=smart&auto=webp&s=fc2a7616b49420f90caac8a30b5ee36efc276c28);
+        }
+
+        .card_4 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://gyanchakra.co.in/wp-content/uploads/2024/04/users2Fw1qPs2bgXeNX0A3jw4NJUE5n1Y932Fe2o04PxVrEHh1ylP2vaF2F8a47fdf6-07a0-479b-91f6-d20d04b88985.png);
+        }
+
+        .card_5 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.america-times.com/wp-content/uploads/2016/12/US-returns-artifacts-to-India.jpg);
+        }
+
+        .card_6 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://lotusarise.com/wp-content/uploads/2024/05/Eight-classical-dances-of-India-recognised-by-Sangeet-Natak-Academy.png);
+        }
+
+        .card_7 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://storytrails.in/wp-content/uploads/2022/09/Festivals-of-India-1024x1024.jpg);
+        }
+
+        .card_8 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://media.geeksforgeeks.org/wp-content/uploads/20231110094703/Wildlife-in-India.webp);
+        }
+
+        .card_9 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAotmeFDjavLIsCBPtRA-b541vYV9iP5L41lImXqSiKiCL-i3lGqNw3h0RPLit-2ud0pM&usqp=CAU);
+        }
+
+        .card-title {
+            font-size: 2.6em;
+            color: white !important;
+            font-weight: bolder;
+            justify-content: center;
+        }
+
+        header {
+            background-color: red;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 200px;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: overlay;
+            color: #fff;
+        }
+
+        .video {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .home_header_info h1 {
+            font-size: 45px;
+            padding: 20px 0px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <nav>
+        <div class="container">
+            <div class="menu-par">
+                <div class="logo-par">
+                    <a href="/user/index">
+                        <h2>INDIA</h2>
+                    </a>
+                </div>
+                
+                <div class="toggle-btn">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end nav bar -->
+
+    <header>
+        <div class="conatiner">
+            <div class="home_header_info">
+
+                <h1 th:text="'Explore '+${state}"></h1>
+                <p>India is a country dotted with stunning wildlife diversity, and rich traditions. While the
+                    Western
+                    coast greets you with mouth-watering delicacies, the East part invites you to experience its
+                    greenery.</p>
+            </div>
+        </div>
+        <div class="video">
+            <img id="video"
+                src="https://media.licdn.com/dms/image/v2/C5612AQEEH1_LFQGebQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1641618387668?e=2147483647&v=beta&t=ezsM5cz0iCaQGGSxl5Wd20jtgkuyojOc28VKjS7RMdU">
+
+
+        </div>
+    </header>
+    <div class="container">
+        <br>
+
+        <div class="row">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card"
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://media.geeksforgeeks.org/wp-content/uploads/20231110094703/Wildlife-in-India.webp);">
+                    <div class="card-body">
+                        <a th:href="'/user/monuments/'+${id}" class="card-title">Monuments</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card_2">
+                    <div class="card-body">
+                        <a th:href="'/user/music/'+${id}" class="card-title">Musical</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card_3">
+                    <div class="card-body">
+                        <a th:href="'/user/food/'+${id}" class="card-title">Food Cuisine</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content. -->
+                        <!-- </p> -->
+                        <!-- <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-4">
+                <div class="card card_4">
+                    <div class="card-body">
+                        <a th:href="'/user/language/'+${id}" class="card-title">Languages</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card_5">
+                    <div class="card-body">
+                        <a th:href="'/user/artifacts/'+${id}" class="card-title">Artifacts</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card_6">
+                    <div class="card-body">
+                        <a th:href="'/user/dance/'+${id}" class="card-title">Dance</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-4">
+                <div class="card card_7">
+                    <div class="card-body">
+                        <a th:href="'/user/festival/'+${id}" class="card-title">Festivals</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card_8">
+                    <div class="card-body">
+                        <a th:href="'/user/wildlife/'+${id}" class="card-title">Wild Life</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card_9">
+                    <div class="card-body">
+                        <a th:href="'/user/health/'+${id}" class="card-title">Health</a>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a th:href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

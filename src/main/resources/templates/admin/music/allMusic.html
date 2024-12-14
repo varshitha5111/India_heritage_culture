@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Admin Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .new-user-details {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Card styles */
+        .card {
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Layout adjustments */
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4 {
+            flex: 0 0 calc(33.333% - 10px);
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <div th:insert="~{includes/nav::navbar}"></div>
+    <!-- end nav bar -->
+
+    <div class="d-flex">
+
+        <!-- side bar -->
+        <div th:insert="~{includes/sideBar::sidebar}"></div>
+        <!-- end side bar -->
+
+
+        <main id="main-content" class="flex-grow-1 p-4">
+            <h2>All Music </h2>
+            <div class="row">
+                <div class="container mx-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="clear-fix">
+                                <div class="float-start">
+                                    All Details
+                                </div>
+                                <div class="float-end">
+                                    <a class="btn btn-primary" th:href="@{/admin/music/add}">Add +</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">No_Of_Images</th>
+                                    <th scope="col">state_id</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody th:each="music : ${musics}">
+                                <tr>
+                                    <th scope="row" th:text="${music.id}"></th>
+                                    <td th:text="${music.instrumentName}"></td>
+                                    <td th:text="${music.length}"></td>
+                                    <td th:text="${music.stateId.id}"></td>
+                                    <td>
+                                        <a th:href="@{'/admin/music/update/'+${music.id}}" class="btn btn-sm btn-success">edit</a>
+                                        <a th:href="@{'/admin/music/delete/'+${music.id}}" class="btn btn-sm btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script1.js"></script>
+</body>
+
+</html>
